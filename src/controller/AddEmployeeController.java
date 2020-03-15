@@ -32,10 +32,10 @@ public class AddEmployeeController  extends HttpServlet{
                         
                         emp.setEid(request.getParameter("eid"));
                         emp.setFname(request.getParameter("fname"));
-                     /*   emp.setLname(request.getParameter("lname"));
+                        emp.setLname(request.getParameter("lname"));
                         emp.setDob(request.getParameter("dob"));
                         emp.setAddress(request.getParameter("address"));
-                            String[] qualify={ request.getParameter("qualify1") , request.getParameter("qualify2"),request.getParameter("qualify3"),request.getParameter("qualify4"), request.getParameter("qualify5") }; 
+                           String[] qualify={ request.getParameter("qualify1") , request.getParameter("qualify2"),request.getParameter("qualify3"),request.getParameter("qualify4"), request.getParameter("qualify5") }; 
                         emp.setQualification(qualify);
                         emp.setTpNo(request.getParameter("tpNo"));
                 
@@ -43,7 +43,7 @@ public class AddEmployeeController  extends HttpServlet{
                             String[] school={ request.getParameter("school1") ,request.getParameter("school2"),request.getParameter("school3")};
                         emp.setSchool(school);
                         emp.setBankAccNo(request.getParameter("bankAccNo"));
-                 */       
+                      
                        
                        try{
                                 @SuppressWarnings("unused")

@@ -24,7 +24,7 @@ public class EmployeeHelper {
                                 Connection con= DBConnect.getConnction();//get Connection details
                         
                                 sql ="INSERT INTO employee(eid,fname,lname,dob,address,tpNo,salary,position,bankAccountNo)"
-                                        +"VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+                                        +"VALUES(?,?,?,?,?,?,?,?,?)";
                                 ps = con.prepareStatement(sql);//returns statement that is editable for custom values
                                 
                                 //set values to the query 
@@ -33,48 +33,51 @@ public class EmployeeHelper {
                                 ps.setString(3, emp.getLname());
                                 ps.setString(4,emp.getDob() );
                                 ps.setString(5, emp.getAddress());
-                                ps.setString(5,emp.getTpNo() );
-                                ps.setDouble(6,emp.getSalary() );
-                                ps.setString(7, emp.getPosition());
-                                ps.setString(8, emp.getBankAccNo() );
+                                ps.setString(6,emp.getTpNo() );
+                                ps.setDouble(7,emp.getSalary() );
+                                ps.setString(8, emp.getPosition());
+                                ps.setString(9, emp.getBankAccNo() );
                                 
                                 int query1 = ps.executeUpdate();//returns boolean
                                 
                                //array of qualification 
-                                sql= " INSERT INTO empQualification(eid,qualify)"+"VALUES(?,?)";
+                                sql= " INSERT INTO emp_qualification(eid,qualification)"+"VALUES(?,?)";//table name should be changed
                                 ps = con.prepareStatement(sql);
-                                 
-                                  String[] qualify= emp.getQualification();
-                                 
-                                for(int i=0;i<5;i++)
-                                {
-                                    if(qualify[i]!=null){
+                                 //table name is in camel case 
+                                //------------check the table name + colum names again--------------
+                                
+                                String[] qualify= emp.getQualification();
+                                  
+                                 for(int i=0;i<5;i++){
                                    
                                         ps.setString(1, emp.getEid());
                                         ps.setString(2, qualify[i]);
-                                    }   
-                                }
+                                 }   
                                 
+                            
+                                
+                                
+                              
                                 int query2 = ps.executeUpdate();//returns boolean
                                 
                                 //array of school
-                                sql="INSERT INTO empSchool(eid,school) "+"VALUES(?,?)";
+                                sql="INSERT INTO emp_school(eid,school) "+"VALUES(?,?)";
                                 ps = con.prepareStatement(sql);
                                 
                                 String[] school= emp.getSchool();
-                                for(int i=0;i<5;i++)
+                                for(int i=0;i<3;i++)
                                 {
-                                    if(school[i]!=null){
+                                  
                                    
                                         ps.setString(1, emp.getEid());
                                         ps.setString(2, school[i]);
-                                    }   
+                                      
                                 }
                                 
                                  int query3 = ps.executeUpdate();//returns boolean
                                  
                                  
-                                 if(query1==1 && query2==1 && query3==1)
+                                 if(query1==1  && query2==1  && query3==1)
                                            return true; //Successfully executed      
                                  else 
                                            return false;                       
