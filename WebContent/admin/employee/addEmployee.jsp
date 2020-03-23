@@ -24,14 +24,20 @@
                                 <td><input type="text"  name="lname"></td>
                             </tr>
                             <tr>
-                                <td>dob</td>
+                                <td>date of birth</td>
                                 <td> <input type="text" name="dob"></td><!-- date -->
                             </tr>
+                            <tr>
+                            	<td>NIC</td>
+                            	<td> <input type="text" name="NIC"></td>
+                            </tr>
+                            <tr>
                                 <td>address</td>
-                                
-                                
-                                <td>    <textarea name="address" rows="5" cols="15"> address</textarea>
+                                <td>    <input type="text" name="lane">
+                                        <input type="text" name="city">
+                                        <input type="text" name="district">
                                 </td>
+                            </tr>    
                             <tr>
                                 <td>gender</td>
                                  <td>  
@@ -69,6 +75,23 @@
                             <tr>
                                 <td>Bank Account No</td>
                                 <td><input type="text"  name="bankAccNo"></td>
+                            </tr>
+                            <tr>
+                            	<td>experience</td>
+                            	<td>
+                            			<input type="text" name="exp1">
+                                        <input type="text" name="exp2">
+                                        <input type="text" name="exp3">
+                                </td>        
+                            </tr>
+                            <tr>
+                            	<td>employee Type</td>
+                            	<td>
+                            		<select name="empType">
+                            			<option value="permanent">male</option>
+                            			<option value="temporary">female</option>
+                            		</select>	
+                            	</td>
                             </tr>
                             <tr>
                                 <td><input type="submit" value="add"></td>
