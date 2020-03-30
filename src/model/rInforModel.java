@@ -11,7 +11,7 @@ public class rInforModel {
 		
 		this.rInforId=0;
 		this.rId="";
-		this.rAmount=0.0;
+		this.rAmount=0;
 		this.month="";
 	}
 

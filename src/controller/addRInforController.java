@@ -4,8 +4,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,10 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import helper.rInforHelper;
 import model.rInforModel;
 
-/**
- * Servlet implementation class addRInforController
- */
-@WebServlet("/addRInforController")
+
+//@WebServlet("/addRInforController")
 public class addRInforController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -44,17 +43,22 @@ try(PrintWriter out=response.getWriter()){
 		
 			
 		try {
+			rInforHelper rh=new rInforHelper();
 			
-			boolean executionStatus=rInforHelper.rInformation(rinfor);
+			boolean executionStatus=rh.addRInformation(rinfor);
 	
-			RequestDispatcher dispatcher=getServletContext().getRequestDispatcher("/rentInformtion/addRentInfor.jsp");
+			RequestDispatcher dispatcher=getServletContext().getRequestDispatcher("/rentInformation/viewRentInfor.jsp");
 			dispatcher.forward(request,response);
 		
 		
 			if(executionStatus)
+			
 				out.print(true);
+			
 			else
+				
 				out.print(false);
+				
 			
 			
 		}catch (ClassNotFoundException cnfe) {
