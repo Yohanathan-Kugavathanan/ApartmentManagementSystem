@@ -23,6 +23,35 @@
     </servlet>
     
     
+      <servlet>
+        <servlet-name>AddComplaintController</servlet-name>
+        <servlet-class>controller.addComplaintController</servlet-class>
+    </servlet>
+    
+    
+    
+    <servlet>
+        <servlet-name>DeleteComplaintController</servlet-name>
+        <servlet-class>controller.deleteComplaintController</servlet-class>
+    </servlet>
+    
+    
+    
+    <servlet>
+        <servlet-name>AddResponseController</servlet-name>
+        <servlet-class>controller.addResponseController</servlet-class>
+    </servlet> 
+    
+    
+     <servlet>
+        <servlet-name>DeleteResponseController</servlet-name>
+        <servlet-class>controller.deleteResponseController</servlet-class>
+    </servlet> 
+    
+    
+    
+    
+    
     
     
     
@@ -56,7 +85,33 @@
         <url-pattern>/deleteRInforController</url-pattern>
     </servlet-mapping>
 	
+
+
+     <servlet-mapping>
+        <servlet-name>AddComplaintController</servlet-name>
+        <url-pattern>/addComplaintController</url-pattern>
+    </servlet-mapping>
+		
+
+
+     <servlet-mapping>
+        <servlet-name>DeleteComplaintController</servlet-name>
+        <url-pattern>/deleteComplaintController</url-pattern>
+    </servlet-mapping>
 	
+	
+	
+	<servlet-mapping>
+        <servlet-name>AddResponseController</servlet-name>
+        <url-pattern>/addResponseController</url-pattern>
+    </servlet-mapping>	
+	
+
+	<servlet-mapping>
+        <servlet-name>DeleteResponseController</servlet-name>
+        <url-pattern>/deleteResponseController</url-pattern>
+    </servlet-mapping>	
+		
 	
 	
 	    

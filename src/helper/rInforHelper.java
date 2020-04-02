@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 import model.rInforModel;
 
-public class rInforHelper {
+public class rInforHelper implements rInforHelperInterface {
 
 public rInforHelper() {
 		
@@ -56,14 +56,15 @@ public rInforHelper() {
 
 		Connection con=DBConnect.getConnction();
 		
-		sql= "UPDATE rinfor SET rInforId=?,rid=?,rAmount=?,month=? WHERE rInforId=?";
+		sql= "UPDATE rinfor SET rId=?,rAmount=?,month=? WHERE rInforId=?";
 		
 		ps = con.prepareStatement(sql);
 		
-		ps.setInt(1, rinfor.getrInforId());
-		ps.setString(2, rinfor.getrId());
-		ps.setDouble(3,rinfor.getrAmount());
-		ps.setString(4, rinfor.getMonth());
+		ps.setString(1, rinfor.getrId());
+		ps.setDouble(2,rinfor.getrAmount());
+		ps.setString(3, rinfor.getMonth());
+		ps.setInt(4, rinfor.getrInforId());
+
 		
 		int query=ps.executeUpdate();
 		

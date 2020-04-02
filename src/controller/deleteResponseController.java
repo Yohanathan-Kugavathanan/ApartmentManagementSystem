@@ -9,35 +9,42 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import helper.rInforHelper;
+import helper.responseHelper;
+import model.responseModel;
 
-import model.rInforModel;
-
-//@WebServlet("/deleteRInforController")
-public class deleteRInforController extends HttpServlet {
+/**
+ * Servlet implementation class deleteResponseController
+ */
+//@WebServlet("/deleteResponseController")
+public class deleteResponseController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+     
+
+		public deleteResponseController() {
+			
+		}
+		
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-	
+
 try (PrintWriter out = response.getWriter()) {
 			
-			rInforModel rinfor = new rInforModel();
+			responseModel resp = new responseModel();
 			
 			
-			rinfor.setrInforId(Integer.parseInt(request.getParameter("rInforId")));
+			resp.setResponseId(Integer.parseInt(request.getParameter("responseId")));
 			try {
-				rInforHelper rh=new rInforHelper();
+				responseHelper reh=new responseHelper();
 				
-				boolean executionStatus = rh.deleteRInformation(rinfor);//returns boolean
+				boolean executionStatus = reh.deleteResponse(resp);//returns boolean
 				
 				if(executionStatus) 
-					response.sendRedirect(request.getContextPath()+"/rentInformation/viewRentInfor.jsp?rInforId="+rinfor.getrInforId());
+					response.sendRedirect(request.getContextPath()+"/admin/complaintResponse/viewResponse.jsp?responseId="+resp.getResponseId());
 				
 	
 								
 				else
-								response.sendRedirect(request.getContentType()+"/rentInformation/viewRentInfor.jsp");
+								response.sendRedirect(request.getContentType()+"/admin/complaintResponse/viewResponse.jsp");
 				
 			} catch (ClassNotFoundException cnfe) {
 				out.print(cnfe);
@@ -55,6 +62,10 @@ try (PrintWriter out = response.getWriter()) {
 		
 		
 		
+
+	
+	
+	
 	
 	}
 

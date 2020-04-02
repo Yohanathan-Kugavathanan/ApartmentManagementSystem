@@ -55,12 +55,13 @@
 		
 		</table>
 		
+	
 		
 		<br/><br/><br/></br>
 		
 		
 		
-		<form method="post" action="updateRInforController">
+		<form method="post" action="../updateRInforController">
 	<table align="center">
 	<tr><td><h3>Tenant ID</h3></td>
 		<td><input type="text" name="rId" required></td>
@@ -93,10 +94,10 @@
 	</table>
 	</form>
 		
-		
 		<%
 			}
 			%>
+			
 		
 		
 		

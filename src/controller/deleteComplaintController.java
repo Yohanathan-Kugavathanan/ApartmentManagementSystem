@@ -9,35 +9,38 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import helper.rInforHelper;
+import helper.complaintHelper;
+import model.complaintModel;
 
-import model.rInforModel;
-
-//@WebServlet("/deleteRInforController")
-public class deleteRInforController extends HttpServlet {
+/**
+ * Servlet implementation class deleteComplaintController
+ */
+//@WebServlet("/deleteComplaintController")
+public class deleteComplaintController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
+ 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+
 	
 try (PrintWriter out = response.getWriter()) {
 			
-			rInforModel rinfor = new rInforModel();
+			complaintModel complaint = new complaintModel();
 			
 			
-			rinfor.setrInforId(Integer.parseInt(request.getParameter("rInforId")));
+			complaint.setComplaintId(Integer.parseInt(request.getParameter("complaintId")));
 			try {
-				rInforHelper rh=new rInforHelper();
+				complaintHelper ch=new complaintHelper();
 				
-				boolean executionStatus = rh.deleteRInformation(rinfor);//returns boolean
+				boolean executionStatus = ch.deleteComplaint(complaint);//returns boolean
 				
 				if(executionStatus) 
-					response.sendRedirect(request.getContextPath()+"/rentInformation/viewRentInfor.jsp?rInforId="+rinfor.getrInforId());
+					response.sendRedirect(request.getContextPath()+"/ownerTenant/complaint/viewComplaint.jsp?complaintId="+complaint.getComplaintId());
 				
 	
 								
 				else
-								response.sendRedirect(request.getContentType()+"/rentInformation/viewRentInfor.jsp");
+								response.sendRedirect(request.getContentType()+"/ownerTenant/complaint/viewComplaint.jsp");
 				
 			} catch (ClassNotFoundException cnfe) {
 				out.print(cnfe);
@@ -50,8 +53,7 @@ try (PrintWriter out = response.getWriter()) {
 			
 			
 		}
-		
-		
+
 		
 		
 		

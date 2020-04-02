@@ -47,11 +47,11 @@ public class updateRInforController extends HttpServlet {
 				 boolean executionStatus = rIHelper.updateRInformation(rinfor);
 				 
 				 if(executionStatus)
-					 response.sendRedirect(request.getContextPath()+"rInforUpdate.jsp?rInforId="+rinfor.getrInforId());
+					 response.sendRedirect(request.getContextPath()+"/rentInformation/updateRentInfor.jsp?rInforId="+rinfor.getrInforId());
 				 //use a message box 
 				 else
 					 request.setAttribute("rInforId",request.getParameter("rInforId") );
-				 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("rInforUpdate.jsp");
+				 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/rentInformation/updateRentInfor.jsp");
 				 dispatcher.forward(request, response);
 				 
 			 }

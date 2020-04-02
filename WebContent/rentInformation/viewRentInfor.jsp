@@ -41,7 +41,7 @@
 			<td><%=rinfor.getrAmount() %></td>
 			<td><%=rinfor.getMonth() %></td>
 		
-			<td><a href="<%=request.getContextPath() %>/updateRentInfor.jsp?rid=<%=rinfor.getrInforId() %>"><b>View</b></a></td>
+			<td><a href="<%=request.getContextPath() %>/rentInformation/updateRentInfor.jsp?rInforId=<%=rinfor.getrInforId() %>"><b>View</b></a></td>
 			<td>
 				<form method="post" action="../deleteRInforController">
 					

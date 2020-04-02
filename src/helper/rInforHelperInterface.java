@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import model.rInforModel;
 
 
-public interface rInforhHelperInterface {
+public interface rInforHelperInterface {
 
 	
 	public boolean addRInformation(rInforModel rinfor)throws SQLException,ClassNotFoundException;
