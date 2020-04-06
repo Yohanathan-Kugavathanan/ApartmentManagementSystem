@@ -32,12 +32,12 @@ try (PrintWriter out = response.getWriter()) {
 				boolean executionStatus = rh.deleteRInformation(rinfor);//returns boolean
 				
 				if(executionStatus) 
-					response.sendRedirect(request.getContextPath()+"/rentInformation/viewRentInfor.jsp?rInforId="+rinfor.getrInforId());
+					response.sendRedirect(request.getContextPath()+"/admin/rentInformation/viewRentInfor.jsp?rInforId="+rinfor.getrInforId());
 				
 	
 								
 				else
-								response.sendRedirect(request.getContentType()+"/rentInformation/viewRentInfor.jsp");
+								response.sendRedirect(request.getContentType()+"/admin/rentInformation/viewRentInfor.jsp");
 				
 			} catch (ClassNotFoundException cnfe) {
 				out.print(cnfe);

@@ -18,7 +18,7 @@
 
 
 
-<p><a href="viewRentInfor.jsp"><i class=""></i></a></p>
+<p><a href="viewRentInfor.jsp"><i class="">back</i></a></p>
 		<table>
 		<tr>
 			<th>Rent Information ID</th>
@@ -61,18 +61,18 @@
 		
 		
 		
-		<form method="post" action="../updateRInforController">
+		<form method="post" action="../../updateRInforController">
 	<table align="center">
 	<tr><td><h3>Tenant ID</h3></td>
-		<td><input type="text" name="rId" required></td>
+		<td><input type="text" name="rId" value="<%=rinfor.getrId() %>" required></td>
 	</tr>
 	
 	<tr><td><h3>Amount</h3></td>
-		<td><input type="number" name="rAmount" required></td>	
+		<td><input type="number" name="rAmount" value="<%=rinfor.getrAmount() %>" required></td>	
 	</tr>
 	
 	<tr><td><h3>Month</h3></td>
-		<td><select name="month">
+		<td><select name="month" value="<%=rinfor.getMonth() %>">
 				<option value="january" >January</option>
 				<option value="february" >February</option>
 				<option value="march" >March</option>
@@ -89,7 +89,10 @@
 		</select></td>
 		</tr>
 		
-		<tr><td><input type="submit" value="Update"></td>
+		<tr><td>
+		<input type="hidden" value="<%=rinfor.getrInforId() %>" name="rInforId">
+		
+		<input type="submit" value="Update"></td>
 		</tr>
 	</table>
 	</form>

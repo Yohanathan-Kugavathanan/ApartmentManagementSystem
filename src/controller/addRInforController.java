@@ -47,7 +47,7 @@ try(PrintWriter out=response.getWriter()){
 			
 			boolean executionStatus=rh.addRInformation(rinfor);
 	
-			RequestDispatcher dispatcher=getServletContext().getRequestDispatcher("/rentInformation/viewRentInfor.jsp");
+			RequestDispatcher dispatcher=getServletContext().getRequestDispatcher("/admin/rentInformation/viewRentInfor.jsp");
 			dispatcher.forward(request,response);
 		
 		

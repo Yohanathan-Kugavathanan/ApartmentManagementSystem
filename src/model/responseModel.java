@@ -1,11 +1,12 @@
 package model;
 
+import java.sql.Time;
+
 public class responseModel {
 
 	private int responseId;
 	
 	private String response;
-
 
 
 	public responseModel() {
@@ -42,7 +43,7 @@ public class responseModel {
 	}
 	
 	
-	
+
 	
 	
 	

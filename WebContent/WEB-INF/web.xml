@@ -10,7 +10,8 @@
         <servlet-name>AddRInforController</servlet-name>
         <servlet-class>controller.addRInforController</servlet-class>
     </servlet>
-    
+   
+
      <servlet>
         <servlet-name>UpdateRInforController</servlet-name>
         <servlet-class>controller.updateRInforController</servlet-class>
@@ -44,6 +45,13 @@
     
     
      <servlet>
+        <servlet-name>UpdateResponseController</servlet-name>
+        <servlet-class>controller.updateResponseController</servlet-class>
+    </servlet> 
+    
+    
+    
+     <servlet>
         <servlet-name>DeleteResponseController</servlet-name>
         <servlet-class>controller.deleteResponseController</servlet-class>
     </servlet> 
@@ -51,12 +59,31 @@
     
     
     
+     <servlet>
+        <servlet-name>AddResidentController</servlet-name>
+        <servlet-class>controller.addResidentController</servlet-class>
+    </servlet>
+    
+    
+     <servlet>
+        <servlet-name>UpdateResidentController</servlet-name>
+        <servlet-class>controller.UpdateResidentController</servlet-class>
+    </servlet>
+    
+    
+    
+     <servlet>
+        <servlet-name>DeleteResidentController</servlet-name>
+        <servlet-class>controller.DeleteResidentController</servlet-class>
+    </servlet>
     
     
     
     
     
-    
+
+
+
     
     
     <servlet-mapping>
@@ -71,6 +98,7 @@
         <url-pattern>/addRInforController</url-pattern>
     </servlet-mapping>
     
+
     
     
      <servlet-mapping>
@@ -108,10 +136,41 @@
 	
 
 	<servlet-mapping>
+        <servlet-name>UpdateResponseController</servlet-name>
+        <url-pattern>/updateResponseController</url-pattern>
+    </servlet-mapping>	
+	
+
+
+	<servlet-mapping>
         <servlet-name>DeleteResponseController</servlet-name>
         <url-pattern>/deleteResponseController</url-pattern>
     </servlet-mapping>	
 		
+
+		
+
+
+     <servlet-mapping>
+        <servlet-name>AddResidentController</servlet-name>
+        <url-pattern>/addResidentController</url-pattern>
+    </servlet-mapping>
+
+
+	 <servlet-mapping>
+        <servlet-name>UpdateResidentController</servlet-name>
+        <url-pattern>/UpdateResidentController</url-pattern>
+    </servlet-mapping>
+	
+
+     <servlet-mapping>
+        <servlet-name>DeleteResidentController</servlet-name>
+        <url-pattern>/DeleteResidentController</url-pattern>
+    </servlet-mapping>
+
+
+	
+    
 	
 	
 	    

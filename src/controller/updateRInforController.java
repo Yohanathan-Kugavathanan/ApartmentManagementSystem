@@ -33,11 +33,11 @@ public class updateRInforController extends HttpServlet {
 			rInforModel rinfor=new rInforModel();
 			
 
-			rinfor.setrInforId(Integer.parseInt(request.getParameter("rInforId")));
 			rinfor.setrId(request.getParameter("rId"));
 			rinfor.setrAmount(Double.parseDouble(request.getParameter("rAmount")));
 			rinfor.setMonth(request.getParameter("month"));
-		
+			rinfor.setrInforId(Integer.parseInt(request.getParameter("rInforId")));
+			
 			
 		
 			 try {
@@ -47,13 +47,11 @@ public class updateRInforController extends HttpServlet {
 				 boolean executionStatus = rIHelper.updateRInformation(rinfor);
 				 
 				 if(executionStatus)
-					 response.sendRedirect(request.getContextPath()+"/rentInformation/updateRentInfor.jsp?rInforId="+rinfor.getrInforId());
-				 //use a message box 
+					 response.sendRedirect(request.getContextPath()+"/admin/rentInformation/viewRentInfor.jsp?update=true");
+					 //use a message box 
 				 else
-					 request.setAttribute("rInforId",request.getParameter("rInforId") );
-				 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/rentInformation/updateRentInfor.jsp");
-				 dispatcher.forward(request, response);
-				 
+					 response.sendRedirect(request.getContextPath()+"/admin/rentInformation/viewRentInfor.jsp?update=false");
+					
 			 }
 			 
 			 catch (ClassNotFoundException cnfe) {

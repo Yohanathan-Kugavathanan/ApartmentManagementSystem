@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import model.rInforModel;
 import model.responseModel;
 
 
@@ -55,11 +54,11 @@ public class responseHelper implements responseHelperInterface {
 			
 			Connection con = DBConnect.getConnction();
 			
-	sql="UPDATE response SET responseId=? response=?";
+	sql="UPDATE response SET  response=? where responseId=?";
 	ps= con.prepareStatement(sql);
 	
-	ps.setInt(1, response.getResponseId());
-	ps.setString(2, response.getResponse());
+	ps.setString(1, response.getResponse());
+	ps.setInt(2, response.getResponseId());
 	
 			
 	int query = ps.executeUpdate();
@@ -125,7 +124,7 @@ public class responseHelper implements responseHelperInterface {
 		responseModel rm=new responseModel();
 			
 			rm.setResponseId(res.getInt("responseId"));
-			rm.setResponse(res.getString("reponse"));
+			rm.setResponse(res.getString("response"));
 		
 			responseModelArrayList.add(rm);
 		}
