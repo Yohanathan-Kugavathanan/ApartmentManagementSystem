@@ -81,7 +81,7 @@ public class residentHelper implements residentHelperInterface {
 			
 			Connection con = DBConnect.getConnction();
 			
-			sql="UPDATE reg_customer SET residenttype=? rId=?, name=?, userName=?, password=? ,email=?, contact=?, nic=?  WHERE userName=? ";
+			sql="UPDATE reg_customer SET residenttype=? name=?, userName=?, password=? ,email=?, contact=?, nic=?  WHERE rId=? ";
 			
 			ps= con.prepareStatement(sql);//returns prepared statement
 			
@@ -90,13 +90,13 @@ public class residentHelper implements residentHelperInterface {
 			
 			
 			ps.setString(1, resident.getResidentType());
-			ps.setInt(2, resident.getrId());
-			ps.setString(3, resident.getName());
+			ps.setString(2, resident.getName());
+			ps.setString(3, resident.getUserName());	
 			ps.setInt(4, resident.getPassword());
 			ps.setString(5, resident.getEmail());
 			ps.setString(6, resident.getContact());
 			ps.setString(7, resident.getNIC());
-			ps.setString(8, resident.getUserName());
+			ps.setInt(8, resident.getrId());
 			
 			
 			

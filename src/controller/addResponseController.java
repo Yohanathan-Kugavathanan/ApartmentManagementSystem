@@ -40,17 +40,15 @@ public class addResponseController extends HttpServlet {
 		
 		boolean executionStatus=reh.addResponse(resp);
 	
-		RequestDispatcher dispatcher=getServletContext().getRequestDispatcher("/admin/complaintResponse/viewResponse.jsp");
-		dispatcher.forward(request,response);
-	
 		
 		
 		
-		if (executionStatus) 
-			out.print(true);
+		
+		 if(executionStatus)
+				response.sendRedirect(request.getContextPath()+"/admin/complaintResponse/viewResponse.jsp?add=true");
 			
-		else
-			out.print(false);
+		 else
+				response.sendRedirect(request.getContextPath()+"/admin/complaintResponse/viewResponse.jsp?add=false");
 	
 		
 	}catch (ClassNotFoundException cnfe) {

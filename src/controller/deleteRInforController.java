@@ -38,6 +38,7 @@ try (PrintWriter out = response.getWriter()) {
 								
 				else
 								response.sendRedirect(request.getContentType()+"/admin/rentInformation/viewRentInfor.jsp");
+
 				
 			} catch (ClassNotFoundException cnfe) {
 				out.print(cnfe);

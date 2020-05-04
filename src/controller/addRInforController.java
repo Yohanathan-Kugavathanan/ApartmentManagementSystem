@@ -47,18 +47,17 @@ try(PrintWriter out=response.getWriter()){
 			
 			boolean executionStatus=rh.addRInformation(rinfor);
 	
-			RequestDispatcher dispatcher=getServletContext().getRequestDispatcher("/admin/rentInformation/viewRentInfor.jsp");
-			dispatcher.forward(request,response);
-		
-		
-			if(executionStatus)
 			
-				out.print(true);
+		
+			 if(executionStatus)
+					response.sendRedirect(request.getContextPath()+"/admin/rentInformation/viewRentInfor.jsp?add=true");
+				
+			 else
+					response.sendRedirect(request.getContextPath()+"/admin/rentInformation/viewRentInfor.jsp?add=false");
+		
 			
-			else
-				
-				out.print(false);
-				
+			
+			
 			
 			
 		}catch (ClassNotFoundException cnfe) {
