@@ -28,11 +28,4 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>apartSQL.sql</name>
-			<type>1</type>
-			<location>E:/ITP/ITP_Final_1/ERDIAGRAM/Apartment.sql</location>
-		</link>
-	</linkedResources>
 </projectDescription>
